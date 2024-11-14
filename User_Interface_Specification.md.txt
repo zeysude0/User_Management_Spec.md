@@ -1,0 +1,76 @@
+# User Management Screen Specification
+
+## Overview
+The User Management Screen allows administrators to create, view, edit, and manage user accounts. It includes features to add new users, filter the user list, and set user permissions and statuses. This document provides a detailed specification of UI components, requirements, and behavior for developers.
+
+## Page Components
+
+### 1. User List Table
+- **Description**: Displays a list of existing users, showing essential details in a tabular format.
+- **Columns**:
+  - **ID**: Unique identifier for each user.
+  - **User Name**: Username of the user.
+  - **Email**: Email address of the user.
+  - **Enabled**: Shows if the user account is active (`true`) or disabled (`false`).
+- **Interactions**:
+  - Sorting by clicking on column headers.
+  - Filtering with the "Hide Disabled User" checkbox (filters out users who are disabled).
+
+### 2. New User Button
+- **Description**: Allows administrators to open a form to add a new user.
+- **Location**: Top left of the user list table.
+- **Behavior**:
+  - Clicking this button opens the "New User" form on the right side of the screen.
+
+### 3. Hide Disabled User Checkbox
+- **Description**: Toggles the display of disabled users in the user list.
+- **Location**: Next to the "New User" button.
+- **Behavior**:
+  - When checked, only enabled users are displayed.
+  - When unchecked, all users are displayed, regardless of their enabled status.
+
+### 4. New User Form
+- **Description**: A form for adding new users or editing existing user details.
+- **Fields**:
+  - **Username**: Text input for the unique username.
+  - **Display Name**: Text input for the name displayed for the user.
+  - **Phone**: Text input for the user’s phone number.
+  - **Email**: Text input for the user’s email address.
+  - **User Roles**: Dropdown list to select roles (options: `Guest`, `Admin`, `SuperAdmin`).
+  - **Enabled**: Checkbox to enable or disable the user account.
+- **Validation**:
+  - All fields are required except for **Phone**.
+  - **Email** should be in a valid format.
+- **Behavior**:
+  - New users are added to the list upon clicking the "Save User" button, provided all fields are valid.
+
+### 5. Save User Button
+- **Description**: Saves the information entered in the "New User" form.
+- **Location**: Top right corner of the "New User" form.
+- **Behavior**:
+  - Clicking the button validates the input fields.
+  - If validation passes, the user is saved, and the user list is refreshed to include the new/updated user.
+
+## Initial Screen State
+- The page initially displays the user list with all active (enabled) users.
+- The "Hide Disabled User" checkbox is unchecked by default to show all users.
+- The "New User" form is collapsed until the "New User" button is clicked.
+
+## User Workflow
+
+### Adding a New User
+1. Click **New User**.
+2. Fill out the **New User** form.
+3. Select **User Roles** from the dropdown.
+4. Check **Enabled** if the user should be active immediately.
+5. Click **Save User** to add the user.
+
+### Editing an Existing User
+1. Locate the user in the list and click their row (assuming a detail/edit option per requirements).
+2. Edit the necessary fields in the **New User** form.
+3. Click **Save User** to update the details.
+
+### Filtering Users
+- Use the **Hide Disabled User** checkbox to filter out disabled accounts.
+
+Use the "Hide Disabled User" checkbox to filter out disabled accounts.
